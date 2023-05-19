@@ -52,7 +52,7 @@ public class MyActions {
 	}
 	
 	// ************ wait 
-	public WebElement A_WaitVisiable(WebElement element) {
+	public WebElement A_WaitVisiable(MobileElement element) {
 		return wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
@@ -78,5 +78,10 @@ public class MyActions {
 	
 	public int A_index_Random(List<MobileElement> ListElement) {
 		return new Random().nextInt(ListElement.size());
+	}
+	
+	// ************ DropdownList
+	public void SwipeAndSelectFromDropDownListByText() {
+//		do
 	}
 }

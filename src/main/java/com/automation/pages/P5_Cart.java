@@ -63,13 +63,21 @@ public class P5_Cart extends MyActions{
     }
     
     public String getproductName1() {
- 	   return productName.get(0).getText();
+ 	   return A_WaitVisiable(productName.get(0)).getText();
     }
     
     public int getproductPrice1() {
  	   return Integer.parseInt((productPrice.get(0).getText().replaceAll("[\\$ ]", ""))) ;
-    }
- 
+    }    
+    
+    public void Click_clearCartBtn() {
+		A_Click(clearCartBtn);
+	}
+    
+    public void Click_checkoutBtn() {
+		A_Click(checkoutBtn);
+	}
+   
 }
 	
 

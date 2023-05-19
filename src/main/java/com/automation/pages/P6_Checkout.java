@@ -29,8 +29,8 @@ public class P6_Checkout extends MyActions{
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 	 
-    @AndroidFindBy (xpath  = "//android.view.ViewGroup[1]//android.view.ViewGroup[2]//android.view.ViewGroup[1]//android.view.ViewGroup/android.view.ViewGroup[1]/android.view.View[text(),\"Checkout\"]")
-	private MobileElement  Checkout_Title;
+    @AndroidFindBy (xpath  = "//*[@text=\"Checkout\"]")
+	private MobileElement  Checkout_Title1;
     
     @AndroidFindBy (accessibility  = "phoneNum")
 	private MobileElement  phoneNum;
@@ -57,22 +57,27 @@ public class P6_Checkout extends MyActions{
 	private MobileElement confirmShippingFormBtn ;
 
     public boolean isdisplay() {
-  	  return A_WaitVisiable(Checkout_Title).isDisplayed();
+  	  return A_WaitVisiable(Checkout_Title1).isDisplayed();
      } 
     
-   public void fullfillregisterBtn(String phoneNum1, String shippingAdd11,String shippingAdd21, String shippingCity1, String shippingZIPCode1, String password) {
-	   A_WaitVisiable(phoneNum);
-	   phoneNum.sendKeys(phoneNum1);
-	   shippingAdd1.sendKeys(shippingAdd11);
-	   shippingAdd2.sendKeys(shippingAdd21);
-	   shippingCity.sendKeys(shippingCity1);
-	   shippingZIPCode.sendKeys(shippingZIPCode1);
-	   selectCountryTrigger.click();
-	   List_select.get(new Random().nextInt(List_select.size())).click();
-	   confirmShippingFormBtn.click();
+   public void fullfillregisterBtn(AppiumDriver driver, String phoneNum1, String shippingAdd11,String shippingAdd21, String shippingCity1, String shippingZIPCode1, String country) throws InterruptedException {
+	   A_Senkey(phoneNum, phoneNum1);
+	   A_Senkey(shippingAdd1, shippingAdd11);
+	   A_Senkey(shippingAdd2, shippingAdd21);
+	   A_swipe(driver, 50, 50, 80, 40);
+	   A_Senkey(shippingCity, shippingCity1);
+	   A_Senkey(shippingZIPCode, shippingZIPCode1);
+	   A_swipe(driver, 50, 50, 80, 50);
+	   A_Click(selectCountryTrigger);
+	   Thread.sleep(500);
+	   A_Click(driver.findElement(MobileBy.xpath("//*[@text=\""+country+"\"]")));
+	   A_Click(confirmShippingFormBtn);
    }
 // ******************************************** Payment 
 
+   @AndroidFindBy (accessibility  = "paymentTabHeader")
+	private MobileElement paymentTabHeader ;
+   
    @AndroidFindBy (accessibility  = "Cash on Delivery")
 	private MobileElement Cash_on_Delivery ;
  
@@ -91,7 +96,26 @@ public class P6_Checkout extends MyActions{
    @AndroidFindBy (accessibility  = "confirmBtn")
 	private MobileElement confirmBtn ;
    
-   // ******************** Confirm
+   public boolean Payment_isdisplay() {
+	  	  return A_WaitVisiable(paymentTabHeader).isDisplayed();
+   } 
+   
+   public void Bank_Transfer() {
+	A_Click(Bank_Transfer);
+   }
+   
+   public void Card_Payment() {
+	A_Click(Card_Payment);
+   }
+   
+   public void Click_Cash_on_Delivery() {
+	A_Click(Cash_on_Delivery);
+   }
+   
+   public void Click_confirmBtn() {
+	A_Click(confirmBtn);
+   }
+   // ******************** Confirm order
    @AndroidFindBy (accessibility  = "confirmTabHeader")
 	private MobileElement confirmTabHeader ;
  
@@ -104,6 +128,12 @@ public class P6_Checkout extends MyActions{
    @AndroidFindBy (accessibility  = "confirmCity")
 	private MobileElement  confirmCity;
    
+   @AndroidFindBy (accessibility  = "confirmZIPCode")
+	private MobileElement  confirmZIPCode;
+   
+   @AndroidFindBy (accessibility  = "confirmCountry")
+	private MobileElement  confirmCountry;
+   
    @AndroidFindBy (accessibility  = "itemName")
 	private MobileElement  itemName;
    
@@ -114,7 +144,42 @@ public class P6_Checkout extends MyActions{
 	private MobileElement  placeOrderBtn;
    
    
-  //******************* Confirm
+   public boolean isdisplay_confirmTabHeader() {
+	  	  return A_WaitVisiable(confirmTabHeader).isDisplayed();
+   } 
+   
+   public String getconfirmShippingAdd1() {
+ 	   return A_WaitVisiable(confirmShippingAdd1).getText();
+    }
+   
+   public String getconfirmShippingAdd2() {
+ 	   return A_WaitVisiable(confirmShippingAdd2).getText();
+    }
+   
+   public String getconfirmCity() {
+ 	   return A_WaitVisiable(confirmCity).getText();
+    }
+   
+   public String getitemName() {
+ 	   return A_WaitVisiable(itemName).getText();
+    }
+   
+   public String getconfirmZIPCode() {
+ 	   return A_WaitVisiable(confirmZIPCode).getText();
+    }
+   
+   public String getconfirmCountry() {
+ 	   return A_WaitVisiable(confirmCountry).getText();
+    }
+   
+   public int getitemPrice() {
+ 	   return Integer.parseInt(A_WaitVisiable(itemPrice).getText().replaceAll("[\\$ ]", ""));
+    }
+   
+   public void Click_placeOrderBtn() {
+	   A_Click(placeOrderBtn);
+   }
+  //******************* Ordersuccess 
    @AndroidFindBy (accessibility  = "text1")
 	private MobileElement  text1;
 	
@@ -122,6 +187,9 @@ public class P6_Checkout extends MyActions{
 	@AndroidFindBy (accessibility  = "emptyCartSuggestionMsg" )
 	private MobileElement  emptyCartSuggestionMsg;
 	
+	public boolean isOrdersuccess() {
+	return A_WaitVisiable(emptyCartSuggestionMsg).isDisplayed();
+	} 
 }
 
 
