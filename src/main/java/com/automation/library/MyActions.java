@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -52,8 +53,8 @@ public class MyActions {
 	}
 	
 	// ************ wait 
-	public WebElement A_WaitVisiable(MobileElement element) {
-		return wait.until(ExpectedConditions.visibilityOf(element));
+	public WebElement A_WaitVisiable(WebElement webElement) {
+		return wait.until(ExpectedConditions.visibilityOf(webElement));
 	}
 	
 	public WebElement A_WaitClickable(WebElement element) {
@@ -83,5 +84,25 @@ public class MyActions {
 	// ************ DropdownList
 	public void SwipeAndSelectFromDropDownListByText() {
 //		do
+	}
+	
+	// ************ Sleep
+	public void A_Sleep(int miliseconds) {
+		try {
+			Thread.sleep(miliseconds);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	// ************ Allert Pop-up
+	public void A_Accept_Allert_Android() {
+        A_Sleep(500);
+        driver.findElement(By.xpath(".//android.widget.Button[@text='Allow']")).click();
+	}
+	
+	public void A_Accept_Allert_iOS() {
+        A_Sleep(500);
+        driver.findElement(By.id("Allow")).click();
 	}
 }

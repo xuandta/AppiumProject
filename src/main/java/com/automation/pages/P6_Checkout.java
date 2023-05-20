@@ -60,7 +60,7 @@ public class P6_Checkout extends MyActions{
   	  return A_WaitVisiable(Checkout_Title1).isDisplayed();
      } 
     
-   public void fullfillregisterBtn(AppiumDriver driver, String phoneNum1, String shippingAdd11,String shippingAdd21, String shippingCity1, String shippingZIPCode1, String country) throws InterruptedException {
+   public void fullfillregisterBtn(AppiumDriver driver, String phoneNum1, String shippingAdd11,String shippingAdd21, String shippingCity1, String shippingZIPCode1, String country)  {
 	   A_Senkey(phoneNum, phoneNum1);
 	   A_Senkey(shippingAdd1, shippingAdd11);
 	   A_Senkey(shippingAdd2, shippingAdd21);
@@ -69,7 +69,7 @@ public class P6_Checkout extends MyActions{
 	   A_Senkey(shippingZIPCode, shippingZIPCode1);
 	   A_swipe(driver, 50, 50, 80, 50);
 	   A_Click(selectCountryTrigger);
-	   Thread.sleep(500);
+	   A_Sleep(500);
 	   A_Click(driver.findElement(MobileBy.xpath("//*[@text=\""+country+"\"]")));
 	   A_Click(confirmShippingFormBtn);
    }

@@ -36,7 +36,7 @@ public class EndToEnd extends DriverInstance {
 	
 	
 	@Test
-	public void EndToEndTC() throws InterruptedException {
+	public void EndToEndTC() {
     	MyActions MyActions = new MyActions(driver);
     	P0_Menu P0_Menu = new P0_Menu(driver);
     	P1_Login P1_Login = new P1_Login(driver);
@@ -108,8 +108,6 @@ public class EndToEnd extends DriverInstance {
 	    assertEquals(P6_Checkout.isdisplay(), true);
 	    
 	    P6_Checkout.fullfillregisterBtn(driver, C_phone, C_Add1, C_Add2, C_City, C_Zipcode, C_country);
-	    
-	    Thread.sleep(4000);
 	    
 	    // Màn hình Payment
 	    
