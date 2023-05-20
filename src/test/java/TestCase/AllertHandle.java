@@ -3,17 +3,16 @@ package TestCase;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.appium.java_client.AppiumDriver;
+import com.automation.library.MyActions;
+
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.android.AndroidDriver;
 
 public class AllertHandle {
 	public static void main(String[] args) throws MalformedURLException, InterruptedException {
-		AppiumDriver<MobileElement> driver;
+		AndroidDriver<MobileElement> driver;
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 		desiredCapabilities.setCapability("platformName", "android");
 		desiredCapabilities.setCapability("platformVersion", "12");
@@ -23,11 +22,12 @@ public class AllertHandle {
 		desiredCapabilities.setCapability("appActivity", "com.example.orderapp.MainActivity");
 
         URL remoteAddress = new URL("http://127.0.0.1:4723/wd/hub");
-        driver = new AppiumDriver<MobileElement>(remoteAddress, desiredCapabilities);
+        driver = new AndroidDriver<MobileElement>(remoteAddress, desiredCapabilities);
         System.out.println("Set up thành công");
         
-        Thread.sleep(500);
-        driver.findElement(By.xpath(".//android.widget.Button[@text='Allow']")).click();
-        Thread.sleep(2000);
+        MyActions MyActions = new MyActions(driver);
+        MyActions.A_Accept_Allert_Android();
+        
+        driver.close();
 	}
 }
