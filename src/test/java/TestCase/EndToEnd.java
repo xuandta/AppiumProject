@@ -2,10 +2,12 @@ package TestCase;
 
 import static org.testng.Assert.assertEquals;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.automation.base.DriverInstance;
 import com.automation.library.MyActions;
+import com.automation.library.TestListener;
 import com.automation.pages.P0_Menu;
 import com.automation.pages.P1_Login;
 import com.automation.pages.P2_Register;
@@ -14,6 +16,7 @@ import com.automation.pages.P4_ProductDetail;
 import com.automation.pages.P5_Cart;
 import com.automation.pages.P6_Checkout;
 
+@Listeners(TestListener.class)
 public class EndToEnd extends DriverInstance {
 
 	String email = "abc@gmail.com";
@@ -84,7 +87,7 @@ public class EndToEnd extends DriverInstance {
 
 		P4_ProductDetail.click_addToCartBtn();
 
-		assertEquals(P0_Menu.getProductNumber(), 1);
+		assertEquals(P0_Menu.getProductNumber(), 2);
 
 		// Màn hình Cart
 

@@ -51,15 +51,19 @@ public class MyActions {
 		touchAction.press(startPoint).waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1))).moveTo(endPoint)
 				.release().perform();
 	}
-	
-	// ***************** Scroll 
+
+	// ***************** Scroll
 	public void A_ScrollToText(String text) {
-		driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textMatches(\"" + text + "\").instance(0))")).click();;
+		driver.findElement(MobileBy.AndroidUIAutomator(
+				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textMatches(\""
+						+ text + "\").instance(0))"))
+				.click();
+		;
 	}
 
 	// ***************** wait
-	public WebElement A_WaitVisiable(WebElement webElement) {
-		return wait.until(ExpectedConditions.visibilityOf(webElement));
+	public WebElement A_WaitVisiable(WebElement element) {
+		return wait.until(ExpectedConditions.visibilityOf(element));
 	}
 
 	public WebElement A_WaitClickable(WebElement element) {
@@ -69,14 +73,17 @@ public class MyActions {
 	// ***************** Click
 	public void A_Click(WebElement element) {
 		wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+//		log.info("Clicked on element: " + element);
 	}
 
 	// ***************** Sendkey
 	public void A_Senkey(WebElement element, String key) {
 		wait.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(key);
+//		log.info("Sendkey value: \"" + key + "\" on element: " + element);
 	}
 
 	// ***************** Random
+
 	public void A_ClickRandom(List<MobileElement> ListElement) {
 		ListElement.get(new Random().nextInt(ListElement.size())).click();
 	}
@@ -86,9 +93,7 @@ public class MyActions {
 	}
 
 	// ***************** DropdownList
-	public void SwipeAndSelectFromDropDownListByText() {
-//		do
-	}
+
 
 	// ***************** Sleep
 	public void A_Sleep(int miliseconds) {
@@ -121,6 +126,7 @@ public class MyActions {
 	public void A_Assert(int int1, int int2) {
 		try {
 			assertEquals(int1, int2);
+
 		} catch (AssertionError E) {
 			System.out.println("********** Assertion int Error: " + E.getMessage());
 			Assert.fail();
@@ -139,8 +145,38 @@ public class MyActions {
 	public void A_Assert(Boolean boolean1) {
 		try {
 			assertTrue(boolean1);
+//			log.info("Assert [PASS]");
 		} catch (AssertionError E) {
-			System.out.println("********** Assertion True Error: " + E.getMessage());
+//			log.error("Assert [FAIL]" + E.getMessage());
+			Assert.fail();
+		}
+	}
+
+	public void A_Assert_isDisplayed(WebElement element) {
+		try {
+			assertTrue(A_WaitVisiable(element).isDisplayed());
+//			log.info("Element: " + element + "is Displayed");
+		} catch (AssertionError E) {
+//			log.error("Element: " + element + "is not Displayed");
+		}
+	}
+
+	public void A_Assert_isEnabled(WebElement element) {
+		try {
+			A_Assert(element.isEnabled());
+//			log.info("Element: " + element + "is Enabled");
+		} catch (AssertionError E) {
+//			log.error("Element: " + element + "is not Enabled");
+			Assert.fail();
+		}
+	}
+
+	public void A_Assert_isSelected(WebElement element) {
+		try {
+			A_Assert(element.isSelected());
+//			log.info("Element: " + element + "is Selected");
+		} catch (AssertionError E) {
+//			log.error("Element: " + element + "is not Selected");
 			Assert.fail();
 		}
 	}

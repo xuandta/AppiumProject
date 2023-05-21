@@ -8,6 +8,7 @@
           <include name="EndToEndTC"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="CaptureAndAttact"/>
         </methods>
       </class> <!-- TestCase.EndToEnd -->
     </classes>
