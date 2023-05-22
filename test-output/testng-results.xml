@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-22T01:10:30 ICT" name="Default suite" finished-at="2023-05-22T01:11:43 ICT" duration-ms="73152">
+  <suite started-at="2023-05-23T01:08:50 ICT" name="Default suite" finished-at="2023-05-23T01:09:53 ICT" duration-ms="63429">
     <groups>
     </groups>
-    <test started-at="2023-05-22T01:10:30 ICT" name="Default test" finished-at="2023-05-22T01:11:43 ICT" duration-ms="73152">
+    <test started-at="2023-05-23T01:08:50 ICT" name="Default test" finished-at="2023-05-23T01:09:53 ICT" duration-ms="63429">
       <class name="TestCase.EndToEnd">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:TestCase.EndToEnd@478190fc]" started-at="2023-05-22T01:10:30 ICT" name="setUp" finished-at="2023-05-22T01:10:41 ICT" duration-ms="10970" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:TestCase.EndToEnd@595b007d]" started-at="2023-05-23T01:08:50 ICT" name="setUp" finished-at="2023-05-23T01:08:58 ICT" duration-ms="8200" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="EndToEndTC()[pri:0, instance:TestCase.EndToEnd@478190fc]" started-at="2023-05-22T01:10:41 ICT" name="EndToEndTC" finished-at="2023-05-22T01:11:43 ICT" duration-ms="61363" status="PASS">
+        <test-method signature="EndToEndTC()[pri:0, instance:TestCase.EndToEnd@595b007d]" started-at="2023-05-23T01:08:58 ICT" name="EndToEndTC" finished-at="2023-05-23T01:09:53 ICT" duration-ms="54797" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EndToEndTC -->
-        <test-method is-config="true" signature="CaptureAndAttact(org.testng.ITestResult)[pri:0, instance:TestCase.EndToEnd@478190fc]" started-at="2023-05-22T01:11:43 ICT" name="CaptureAndAttact" finished-at="2023-05-22T01:11:43 ICT" duration-ms="8" status="PASS">
+        <test-method is-config="true" signature="CaptureAndAttact(org.testng.ITestResult)[pri:0, instance:TestCase.EndToEnd@595b007d]" started-at="2023-05-23T01:09:53 ICT" name="CaptureAndAttact" finished-at="2023-05-23T01:09:53 ICT" duration-ms="3" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=EndToEndTC status=SUCCESS method=EndToEnd.EndToEndTC()[pri:0, instance:TestCase.EndToEnd@478190fc] output={null}]]]>
+                <![CDATA[[TestResult name=EndToEndTC status=SUCCESS method=EndToEnd.EndToEndTC()[pri:0, instance:TestCase.EndToEnd@595b007d] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CaptureAndAttact -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCase.EndToEnd@478190fc]" started-at="2023-05-22T01:11:43 ICT" name="tearDown" finished-at="2023-05-22T01:11:43 ICT" duration-ms="662" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCase.EndToEnd@595b007d]" started-at="2023-05-23T01:09:53 ICT" name="tearDown" finished-at="2023-05-23T01:09:53 ICT" duration-ms="377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
