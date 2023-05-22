@@ -3,6 +3,7 @@ package com.automation.pages;
 
 import org.openqa.selenium.support.PageFactory;
 
+import com.automation.library.Log;
 import com.automation.library.MyActions;
 
 import io.appium.java_client.MobileElement;
@@ -31,15 +32,15 @@ public class P0_Menu extends MyActions {
 	private MobileElement cart_number;
 
 	public void click_homeIcon() {
-		A_Click(homeIcon);
+		A_Click(homeIcon,"homeIcon");
 	}
 
 	public void click_cartIcon() {
-		A_Click(cartIcon);
+		A_Click(cartIcon,"cartIcon");
 	}
 
 	public void click_userIcon() {
-		A_Click(userIcon);
+		A_Click(userIcon,"userIcon");
 	}
 
 	public int getProductNumber() {

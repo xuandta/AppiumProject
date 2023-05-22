@@ -48,16 +48,16 @@ public class P2_Register extends MyActions {
 
 	public void fullfillregisterBtn(AndroidDriver<MobileElement> driver, String email, String name, String phone,
 			String password) {
-		A_Senkey(email_input, email);
-		A_Senkey(name_input, name);
-		A_Senkey(phone_input, phone);
-		A_Senkey(password_input, password);
+		A_Senkey(email_input,"email_input", email);
+		A_Senkey(name_input, "name_input",name);
+		A_Senkey(phone_input,"phone_input", phone);
+		A_Senkey(password_input,"password_input", password);
 		A_swipe(driver, 50, 50, 70, 30);
-		A_Click(registerBtn);
+		A_Click(registerBtn,"registerBtn");
 	}
 
 	public void click_backToLoginBtn() {
-		A_Click(backToLoginBtn);
+		A_Click(backToLoginBtn,"backToLoginBtn");
 	}
 
 	public boolean ErrorMessage_isdisplay() {

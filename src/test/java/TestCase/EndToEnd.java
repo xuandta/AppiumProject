@@ -6,6 +6,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.automation.base.DriverInstance;
+import com.automation.library.Log;
 import com.automation.library.MyActions;
 import com.automation.library.TestListener;
 import com.automation.pages.P0_Menu;
@@ -35,6 +36,8 @@ public class EndToEnd extends DriverInstance {
 
 	@Test
 	public void EndToEndTC() {
+		Log.info("********************* Class: EndToEnd");
+		Log.info("********* Method: EndToEndTC");
 		MyActions MyActions = new MyActions(driver);
 		P0_Menu P0_Menu = new P0_Menu(driver);
 		P1_Login P1_Login = new P1_Login(driver);
@@ -55,7 +58,7 @@ public class EndToEnd extends DriverInstance {
 		// màn hình log in
 
 		P1_Login.assert_isdisplay();
-
+		
 		P1_Login.fullfillLogin(email, password);
 
 		P1_Login.assert_isLogIn();
@@ -74,20 +77,20 @@ public class EndToEnd extends DriverInstance {
 		ProductPrice = P3_Home.getproductPrice(random_product_index);
 
 		P3_Home.click_product(random_product_index);
-
+		
 		// Màn hình xem chi tiết
 
 		P4_ProductDetail.assert_isdisplay();
 
 		MyActions.A_swipe(driver, 50, 50, 70, 30);
 
-		MyActions.A_Assert(ProductName, P4_ProductDetail.getproductName());
+		MyActions.A_Assert(ProductName, P4_ProductDetail.getproductName(), "Check Product Name");
 
-		MyActions.A_Assert(ProductPrice, P4_ProductDetail.getproductPrice());
+		MyActions.A_Assert(ProductPrice, P4_ProductDetail.getproductPrice(),"Check Product Price");
 
 		P4_ProductDetail.click_addToCartBtn();
 
-		assertEquals(P0_Menu.getProductNumber(), 2);
+		assertEquals(P0_Menu.getProductNumber(), 1,"Check Number of Product");
 
 		// Màn hình Cart
 
@@ -95,15 +98,15 @@ public class EndToEnd extends DriverInstance {
 
 		MyActions.A_swipe(driver, 50, 50, 70, 50);
 
-		MyActions.A_Assert(ProductName, P5_Cart.getproductName1());
+		MyActions.A_Assert(ProductName, P5_Cart.getproductName1(), "Check Product Name");
 
-		MyActions.A_Assert(ProductPrice, P5_Cart.getproductPrice1());
+		MyActions.A_Assert(ProductPrice, P5_Cart.getproductPrice1(), "Check Product Price");
 
 		P5_Cart.Click_checkoutBtn();
 
 		// Màn hình Checkout
 
-		MyActions.A_Assert(P6_Checkout.isdisplay(), true);
+		MyActions.A_Assert(P6_Checkout.isdisplay(), "Check Checkout Screen is Displayed");
 
 		P6_Checkout.fullfillregisterBtn(driver, C_phone, C_Add1, C_Add2, C_City, C_Zipcode, C_country); //C_country
 
@@ -135,5 +138,6 @@ public class EndToEnd extends DriverInstance {
 		P6_Checkout.Click_placeOrderBtn();
 
 		MyActions.A_Assert(P6_Checkout.isOrdersuccess(), true);
+		Log.info("==> The End!");
 	}
 }

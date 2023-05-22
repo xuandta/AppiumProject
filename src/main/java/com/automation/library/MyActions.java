@@ -50,6 +50,7 @@ public class MyActions {
 		TouchAction touchAction = new TouchAction(driver);
 		touchAction.press(startPoint).waitAction(new WaitOptions().withDuration(Duration.ofSeconds(1))).moveTo(endPoint)
 				.release().perform();
+		Log.info("Swipe Screen");
 	}
 
 	// ***************** Scroll
@@ -59,6 +60,7 @@ public class MyActions {
 						+ text + "\").instance(0))"))
 				.click();
 		;
+		Log.info("Scroll to Text \""+text+"\"");
 	}
 
 	// ***************** wait
@@ -73,19 +75,35 @@ public class MyActions {
 	// ***************** Click
 	public void A_Click(WebElement element) {
 		wait.until(ExpectedConditions.elementToBeClickable(element)).click();
-//		log.info("Clicked on element: " + element);
+		Log.info("Click on: " + element);
+	}
+	
+	public void A_Click(WebElement element, String elementName) {
+		wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+		Log.info("Click on: " + elementName);
 	}
 
 	// ***************** Sendkey
 	public void A_Senkey(WebElement element, String key) {
 		wait.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(key);
-//		log.info("Sendkey value: \"" + key + "\" on element: " + element);
+		Log.info("Sendkey value: \"" + key + "\" into element: " + element);
+	}
+	
+	public void A_Senkey(WebElement element, String elementName, String key) {
+		wait.until(ExpectedConditions.elementToBeClickable(element)).sendKeys(key);
+		Log.info("Sendkey value: \"" + key + "\" into element: " + elementName);
 	}
 
 	// ***************** Random
 
 	public void A_ClickRandom(List<MobileElement> ListElement) {
 		ListElement.get(new Random().nextInt(ListElement.size())).click();
+		Log.info("Click Random " + ListElement);
+	}
+	
+	public void A_ClickRandom(List<MobileElement> ListElement, String NameElement) {
+		ListElement.get(new Random().nextInt(ListElement.size())).click();
+		Log.info("Click Random " + NameElement);
 	}
 
 	public int A_index_Random(List<MobileElement> ListElement) {
@@ -99,6 +117,7 @@ public class MyActions {
 	public void A_Sleep(int miliseconds) {
 		try {
 			Thread.sleep(miliseconds);
+			Log.info("Sleep "+miliseconds+" miliseconds");
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -107,6 +126,7 @@ public class MyActions {
 	// ***************** Allert Pop-up
 	public void A_Accept_Allert_Android() {
 		A_Click(driver.findElement(By.xpath(".//android.widget.Button[@text='Allow']")));
+		Log.info("Accept Allert");
 	}
 
 	public void A_Accept_Allert_iOS() {
@@ -117,27 +137,56 @@ public class MyActions {
 	public void A_Assert(String string1, String string2) {
 		try {
 			assertEquals(string1, string2);
+			Log.info("[PASS] Assertion 2 String");
 		} catch (AssertionError E) {
-			System.out.println("********** Assertion String Error: " + E.getMessage());
+			Log.error("[FAIL] Assertion 2 String - Because: " + E.getMessage());
 			Assert.fail();
 		}
 	}
-
+	public void A_Assert(String string1, String string2, String AssertName) {
+		try {
+			assertEquals(string1, string2);
+			Log.info("[PASS] - " + AssertName);
+		} catch (AssertionError E) {
+			Log.error("[FAIL] - " + AssertName +" - Because: "+ E.getMessage());
+			Assert.fail();
+		}
+	}
 	public void A_Assert(int int1, int int2) {
 		try {
 			assertEquals(int1, int2);
-
+			Log.info("[PASS] Assertion 2 int");
 		} catch (AssertionError E) {
-			System.out.println("********** Assertion int Error: " + E.getMessage());
+			Log.error("[FAIL] Assertion 2 int - Because: " + E.getMessage());
 			Assert.fail();
 		}
 	}
 
+	public void A_Assert(int int1, int int2, String AssertName) {
+		try {
+			assertEquals(int1, int2);
+			Log.info("[PASS] - " + AssertName);
+		} catch (AssertionError E) {
+			Log.error("[FAIL] - " + AssertName +" - Because: "+ E.getMessage());
+			Assert.fail();
+		}
+	}
 	public void A_Assert(Boolean boolean1, Boolean boolean2) {
 		try {
 			assertEquals(boolean1, boolean2);
+			Log.info("[PASS] Assertion 2 Boolean");
 		} catch (AssertionError E) {
-			System.out.println("********** Assertion Boolean Error: " + E.getMessage());
+			Log.error("[FAIL] Assertion 2 Boolean - Because: " + E.getMessage());
+			Assert.fail();
+		}
+	}
+	
+	public void A_Assert(Boolean boolean1, Boolean boolean2,String AssertName) {
+		try {
+			assertEquals(boolean1, boolean2);
+			Log.info("[PASS] - " + AssertName);
+		} catch (AssertionError E) {
+			Log.error("[FAIL] - " + AssertName +" - Because: "+ E.getMessage());
 			Assert.fail();
 		}
 	}
@@ -145,9 +194,19 @@ public class MyActions {
 	public void A_Assert(Boolean boolean1) {
 		try {
 			assertTrue(boolean1);
-//			log.info("Assert [PASS]");
+			Log.info("[PASS] Assertion True");
 		} catch (AssertionError E) {
-//			log.error("Assert [FAIL]" + E.getMessage());
+			Log.error("[FAIL] Assertion True ");
+			Assert.fail();
+		}
+	}
+	
+	public void A_Assert(Boolean boolean1,String AssertName) {
+		try {
+			assertTrue(boolean1);
+			Log.info("[PASS] - " + AssertName);
+		} catch (AssertionError E) {
+			Log.error("[FAIL] - " + AssertName +" - Because: "+ E.getMessage());
 			Assert.fail();
 		}
 	}
@@ -155,18 +214,16 @@ public class MyActions {
 	public void A_Assert_isDisplayed(WebElement element) {
 		try {
 			assertTrue(A_WaitVisiable(element).isDisplayed());
-//			log.info("Element: " + element + "is Displayed");
 		} catch (AssertionError E) {
-//			log.error("Element: " + element + "is not Displayed");
+			Log.error("Element: " + element + "is not Displayed");
 		}
 	}
 
 	public void A_Assert_isEnabled(WebElement element) {
 		try {
 			A_Assert(element.isEnabled());
-//			log.info("Element: " + element + "is Enabled");
 		} catch (AssertionError E) {
-//			log.error("Element: " + element + "is not Enabled");
+			Log.error("Element: " + element + "is not Enabled");
 			Assert.fail();
 		}
 	}
@@ -174,9 +231,8 @@ public class MyActions {
 	public void A_Assert_isSelected(WebElement element) {
 		try {
 			A_Assert(element.isSelected());
-//			log.info("Element: " + element + "is Selected");
 		} catch (AssertionError E) {
-//			log.error("Element: " + element + "is not Selected");
+			Log.error("Element: " + element + "is not Selected");
 			Assert.fail();
 		}
 	}

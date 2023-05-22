@@ -63,28 +63,28 @@ public class P3_Home extends MyActions {
 	private List<MobileElement> search_productDesc;
 
 	public void assert_isdisplay() {
-		A_Assert(A_WaitVisiable(HomeTitle).isDisplayed(), true);
+		A_Assert(A_WaitVisiable(HomeTitle).isDisplayed(), "assert_HomePage_isdisplay");
 	}
 
 	public void fullfillSearch(String keyword) {
-		A_Senkey(searchInput, keyword);
+		A_Senkey(searchInput,"searchInput", keyword);
 		searchInput.sendKeys(Keys.ENTER);
 	}
 
 	public void click_Tag_All() {
-		A_Click(Tag_All);
+		A_Click(Tag_All,"Tag_All");
 	}
 
 	public void click_Tag_Vitamin() {
-		A_Click(Tag_Vitamin);
+		A_Click(Tag_Vitamin,"Tag_Vitamin");
 	}
 
 	public void click_Tag_Book() {
-		A_Click(Tag_Book);
+		A_Click(Tag_Book,"Tag_Book");
 	}
 
 	public void click_Tag_random() {
-		A_ClickRandom(Tag);
+		A_ClickRandom(Tag,"Tag");
 	}
 
 	public int random_index_Product() {

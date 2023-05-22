@@ -41,25 +41,26 @@ public class P1_Login extends MyActions {
 	private MobileElement signOutBtn;
 
 	public void assert_isdisplay() {
-		A_Assert(A_WaitVisiable(loginTitle).isDisplayed(), true);
+		A_Assert(A_WaitVisiable(loginTitle).isDisplayed(), "assert_LoginPage_isdisplay");
 	}
 
 	public void assert_isLogIn() {
-		A_Assert(A_WaitVisiable(signOutBtn).isDisplayed(), true);
+		A_Assert(A_WaitVisiable(signOutBtn).isDisplayed(), "assert_isLogIn");
 	}
 
 	public void fullfillLogin(String email, String password) {
-		A_Senkey(emailInput, email);
-		A_Senkey(passwordInput, password);
-		A_Click(loginBtn);
+		A_Senkey(emailInput,"emailInput", email);
+		A_Senkey(passwordInput,"passwordInput", password);
+		A_Click(loginBtn,"loginBtn");
 	}
 
 	public void click_registerBtn() {
-		A_Click(registerBtn);
+		A_Click(registerBtn,"registerBtn");
 	}
 
-	public boolean ErrorMessage_isdisplay() {
-		return A_WaitVisiable(Error_msg).isDisplayed();
+	public void ErrorMessage_isdisplay() {
+		A_Assert(A_WaitVisiable(Error_msg).isDisplayed(), "assert_Error_msg_isDisplayed");
+
 	}
 
 }

@@ -13,6 +13,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import com.automation.library.Log;
+
 public class DriverInstance {
 
 	protected AndroidDriver<MobileElement> driver;
@@ -22,6 +24,7 @@ public class DriverInstance {
 		URL remoteAddress = new URL("http://127.0.0.1:4723/wd/hub");
 		driver = new AndroidDriver<MobileElement>(remoteAddress, AppiumCapabilities());
 		System.out.println("Set up thành công");
+		Log.info("-------------------------------  NewTest  -------------------------------");
 	}
 
 	private DesiredCapabilities AppiumCapabilities() {

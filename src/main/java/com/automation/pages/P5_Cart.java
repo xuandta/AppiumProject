@@ -40,11 +40,11 @@ public class P5_Cart extends MyActions {
 	@AndroidFindBy(accessibility = "checkoutBtn")
 	private MobileElement checkoutBtn;
 
-	public boolean isdisplay() {
-		return A_WaitVisiable(cartHeader).isDisplayed();
+	public void isDisplayed() {
+		A_Assert(A_WaitVisiable(cartHeader).isDisplayed(),"Assert_CartPage_isDisplayed");
 	}
 
-	public boolean checkout_isdisplay() {
+	public boolean checkout_isDisplayed() {
 		return A_WaitVisiable(checkoutBtn).isDisplayed();
 	}
 
