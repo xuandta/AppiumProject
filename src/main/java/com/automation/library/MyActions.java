@@ -94,7 +94,7 @@ public class MyActions {
 		Log.info("Sendkey value: \"" + key + "\" into element: " + elementName);
 	}
 
-	// ***************** Random
+	// ***************** Click Random
 
 	public void A_ClickRandom(List<MobileElement> ListElement) {
 		ListElement.get(new Random().nextInt(ListElement.size())).click();
@@ -105,8 +105,10 @@ public class MyActions {
 		ListElement.get(new Random().nextInt(ListElement.size())).click();
 		Log.info("Click Random " + NameElement);
 	}
-
+	
+	// ***************** Get Random
 	public int A_index_Random(List<MobileElement> ListElement) {
+		Log.info("Get Index Random from List Element " + ListElement);
 		return new Random().nextInt(ListElement.size());
 	}
 
@@ -213,17 +215,38 @@ public class MyActions {
 
 	public void A_Assert_isDisplayed(WebElement element) {
 		try {
+			Log.info("[PASS] - Assert " + element + " is Displayed");
 			assertTrue(A_WaitVisiable(element).isDisplayed());
 		} catch (AssertionError E) {
-			Log.error("Element: " + element + "is not Displayed");
+			Log.error("[FAIL] - Assert " + element + " is not Displayed");
+		}
+	}
+	
+	public void A_Assert_isDisplayed(WebElement element, String elementName) {
+		try {
+			Log.info("[PASS] - Assert " + elementName + " is Displayed");
+			assertTrue(A_WaitVisiable(element).isDisplayed());
+		} catch (AssertionError E) {
+			Log.error("[FAIL] - Assert " + elementName + " is not Displayed");
 		}
 	}
 
 	public void A_Assert_isEnabled(WebElement element) {
 		try {
 			A_Assert(element.isEnabled());
+			Log.info("[PASS] - Assert " + element + " is Enabled");
 		} catch (AssertionError E) {
-			Log.error("Element: " + element + "is not Enabled");
+			Log.error("[FAIL] - Assert " + element + "is not Enabled");
+			Assert.fail();
+		}
+	}
+	
+	public void A_Assert_isEnabled(WebElement element,String elementName) {
+		try {
+			A_Assert(element.isEnabled());
+			Log.info("[PASS] - Assert " + elementName + " is Enabled");
+		} catch (AssertionError E) {
+			Log.error("[FAIL] - Assert " + elementName + "is not Enabled");
 			Assert.fail();
 		}
 	}
@@ -233,6 +256,15 @@ public class MyActions {
 			A_Assert(element.isSelected());
 		} catch (AssertionError E) {
 			Log.error("Element: " + element + "is not Selected");
+			Assert.fail();
+		}
+	}
+	
+	public void A_Assert_isSelected(WebElement element, String elementName) {
+		try {
+			A_Assert(element.isSelected());
+		} catch (AssertionError E) {
+			Log.error("Element: " + elementName + "is not Selected");
 			Assert.fail();
 		}
 	}

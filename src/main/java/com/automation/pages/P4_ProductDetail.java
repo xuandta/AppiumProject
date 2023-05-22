@@ -45,11 +45,11 @@ public class P4_ProductDetail extends MyActions {
 	private MobileElement text2;
 
 	public void assert_isdisplay() {
-		A_Assert(A_WaitVisiable(Title_Product_Detail).isDisplayed(), true);
+		A_Assert_isDisplayed(Title_Product_Detail,"Title_Product_Detail");
 	}
 
 	public void click_addToCartBtn() {
-		A_Click(addToCartBtn);
+		A_Click(addToCartBtn,"addToCartBtn");
 	}
 
 	public String getproductBranch() {

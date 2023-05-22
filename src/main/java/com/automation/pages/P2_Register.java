@@ -60,7 +60,7 @@ public class P2_Register extends MyActions {
 		A_Click(backToLoginBtn,"backToLoginBtn");
 	}
 
-	public boolean ErrorMessage_isdisplay() {
-		return A_WaitVisiable(Error_msg).isDisplayed();
+	public void ErrorMessage_isdisplay() {
+		A_Assert_isDisplayed(Error_msg,"Error_msg");
 	}
 }

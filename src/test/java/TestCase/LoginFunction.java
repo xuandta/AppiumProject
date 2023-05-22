@@ -9,7 +9,11 @@ import com.automation.pages.P0_Menu;
 import com.automation.pages.P1_Login;
 
 public class LoginFunction extends DriverInstance {
-
+	@Test
+	public void name() {
+		P0_Menu P0_Menu = new P0_Menu(driver);
+		P0_Menu.click_homeIcon();
+	}
 	@Test
 	public void TC01_Login_valid() {
 		Log.info("*************Class: LoginFunction - @Test: TC01_Login_valid Started *************");

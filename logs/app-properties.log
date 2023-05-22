@@ -1,55 +1,58 @@
-[INFO ] 22-05-2023 01:10:41 [main] Log - -------------------------------  NewTest  -------------------------------
-[INFO ] 22-05-2023 01:10:41 [main] Log - ********************* Class: EndToEnd
-[INFO ] 22-05-2023 01:10:41 [main] Log - ********* Method: EndToEndTC
-[INFO ] 22-05-2023 01:10:45 [main] Log - Click on: userIcon
-[INFO ] 22-05-2023 01:10:47 [main] Log - Click on: registerBtn
-[INFO ] 22-05-2023 01:10:48 [main] Log - Sendkey value: "abc@gmail.com" into element: email_input
-[INFO ] 22-05-2023 01:10:49 [main] Log - Sendkey value: "abc" into element: name_input
-[INFO ] 22-05-2023 01:10:51 [main] Log - Sendkey value: "0123456789" into element: phone_input
-[INFO ] 22-05-2023 01:10:53 [main] Log - Sendkey value: "Matkhau" into element: password_input
-[INFO ] 22-05-2023 01:10:54 [main] Log - Swipe Screen
-[INFO ] 22-05-2023 01:10:55 [main] Log - Click on: registerBtn
-[INFO ] 22-05-2023 01:10:57 [main] Log - [PASS] - assert_LoginPage_isdisplay
-[INFO ] 22-05-2023 01:10:58 [main] Log - Sendkey value: "abc@gmail.com" into element: emailInput
-[INFO ] 22-05-2023 01:10:59 [main] Log - Sendkey value: "Matkhau" into element: passwordInput
-[INFO ] 22-05-2023 01:11:00 [main] Log - Click on: loginBtn
-[INFO ] 22-05-2023 01:11:02 [main] Log - [PASS] - assert_isLogIn
-[INFO ] 22-05-2023 01:11:02 [main] Log - Click on: homeIcon
-[INFO ] 22-05-2023 01:11:04 [main] Log - [PASS] - assert_HomePage_isdisplay
-[INFO ] 22-05-2023 01:11:05 [main] Log - Swipe Screen
-[INFO ] 22-05-2023 01:11:06 [main] Log - Click on: [[io.appium.java_client.android.AndroidDriver, Capabilities: {appActivity=host.exp.exponent.MainActivity, appPackage=com.tuhuynh.sdetproecommerce, automationName=UiAutomator2, databaseEnabled=false, desired={platformName=android, appActivity=host.exp.exponent.MainActivity, appPackage=com.tuhuynh.sdetproecommerce, automationName=UiAutomator2, deviceName=emulator-5554, platformVersion=12}, deviceApiLevel=31, deviceManufacturer=Google, deviceModel=sdk_gphone64_x86_64, deviceName=emulator-5554, deviceScreenDensity=320, deviceScreenSize=768x1280, deviceUDID=emulator-5554, javascriptEnabled=true, locationContextEnabled=false, networkConnectionEnabled=true, pixelRatio=2, platform=LINUX, platformName=android, platformVersion=12, statBarHeight=48, takesScreenshot=true, viewportRect={left=0, top=48, width=768, height=1136}, warnings={}, webStorageEnabled=false}] -> xpath: (//android.view.ViewGroup[@content-desc="productItem"])]
-[INFO ] 22-05-2023 01:11:07 [main] Log - [PASS] Assertion 2 Boolean
-[INFO ] 22-05-2023 01:11:09 [main] Log - Swipe Screen
-[INFO ] 22-05-2023 01:11:09 [main] Log - [PASS] - Check Product Name
-[INFO ] 22-05-2023 01:11:09 [main] Log - [PASS] - Check Product Price
-[INFO ] 22-05-2023 01:11:09 [main] Log - Click on: Located by By.chained({By.AccessibilityId: addToCartBtn})
-[INFO ] 22-05-2023 01:11:11 [main] Log - Click on: cartIcon
-[INFO ] 22-05-2023 01:11:12 [main] Log - Swipe Screen
-[INFO ] 22-05-2023 01:11:12 [main] Log - [PASS] - Check Product Name
-[INFO ] 22-05-2023 01:11:12 [main] Log - [PASS] - Check Product Price
-[INFO ] 22-05-2023 01:11:13 [main] Log - Click on: Located by By.chained({By.AccessibilityId: checkoutBtn})
-[INFO ] 22-05-2023 01:11:13 [main] Log - [PASS] - Check Checkout Screen is Displayed
-[INFO ] 22-05-2023 01:11:16 [main] Log - Sendkey value: "123" into element: Located by By.chained({By.AccessibilityId: phoneNum})
-[INFO ] 22-05-2023 01:11:17 [main] Log - Sendkey value: "100 Khương Đình" into element: Located by By.chained({By.AccessibilityId: shippingAdd1})
-[INFO ] 22-05-2023 01:11:19 [main] Log - Sendkey value: "187 Hạ Đình" into element: Located by By.chained({By.AccessibilityId: shippingAdd2})
-[INFO ] 22-05-2023 01:11:21 [main] Log - Swipe Screen
-[INFO ] 22-05-2023 01:11:21 [main] Log - Sendkey value: "Hà Nội" into element: Located by By.chained({By.AccessibilityId: shippingCity})
-[INFO ] 22-05-2023 01:11:22 [main] Log - Sendkey value: "100000" into element: Located by By.chained({By.AccessibilityId: shippingZIPCode})
-[INFO ] 22-05-2023 01:11:24 [main] Log - Swipe Screen
-[INFO ] 22-05-2023 01:11:24 [main] Log - Click on: Located by By.chained({By.AccessibilityId: selectCountryTrigger})
-[INFO ] 22-05-2023 01:11:32 [main] Log - Scroll to Text "Aruba"
-[INFO ] 22-05-2023 01:11:32 [main] Log - Click on: Located by By.chained({By.AccessibilityId: confirmShippingFormBtn})
-[INFO ] 22-05-2023 01:11:34 [main] Log - Click on: Located by By.chained({By.AccessibilityId: Cash on Delivery})
-[INFO ] 22-05-2023 01:11:36 [main] Log - Swipe Screen
-[INFO ] 22-05-2023 01:11:36 [main] Log - Click on: Located by By.chained({By.AccessibilityId: confirmBtn})
-[INFO ] 22-05-2023 01:11:38 [main] Log - [PASS] Assertion 2 Boolean
-[INFO ] 22-05-2023 01:11:38 [main] Log - [PASS] Assertion 2 Boolean
-[INFO ] 22-05-2023 01:11:38 [main] Log - [PASS] Assertion 2 Boolean
-[INFO ] 22-05-2023 01:11:38 [main] Log - [PASS] Assertion 2 Boolean
-[INFO ] 22-05-2023 01:11:38 [main] Log - [PASS] Assertion 2 Boolean
-[INFO ] 22-05-2023 01:11:40 [main] Log - Swipe Screen
-[INFO ] 22-05-2023 01:11:40 [main] Log - [PASS] Assertion 2 String
-[INFO ] 22-05-2023 01:11:40 [main] Log - [PASS] Assertion 2 int
-[INFO ] 22-05-2023 01:11:40 [main] Log - Click on: Located by By.chained({By.AccessibilityId: placeOrderBtn})
-[INFO ] 22-05-2023 01:11:43 [main] Log - [PASS] Assertion 2 Boolean
-[INFO ] 22-05-2023 01:11:43 [main] Log - ==> The End!
+[INFO ] 23-05-2023 01:08:58 [main] Log - -------------------------------  NewTest  -------------------------------
+[INFO ] 23-05-2023 01:08:58 [main] Log - ********************* Class: EndToEnd
+[INFO ] 23-05-2023 01:08:58 [main] Log - ********* Method: EndToEndTC
+[INFO ] 23-05-2023 01:09:02 [main] Log - Click on: userIcon
+[INFO ] 23-05-2023 01:09:03 [main] Log - Click on: registerBtn
+[INFO ] 23-05-2023 01:09:04 [main] Log - Sendkey value: "abc@gmail.com" into element: email_input
+[INFO ] 23-05-2023 01:09:06 [main] Log - Sendkey value: "abc" into element: name_input
+[INFO ] 23-05-2023 01:09:07 [main] Log - Sendkey value: "0123456789" into element: phone_input
+[INFO ] 23-05-2023 01:09:08 [main] Log - Sendkey value: "Matkhau" into element: password_input
+[INFO ] 23-05-2023 01:09:09 [main] Log - Swipe Screen
+[INFO ] 23-05-2023 01:09:10 [main] Log - Click on: registerBtn
+[INFO ] 23-05-2023 01:09:10 [main] Log - [PASS] - Assert loginTitle is Displayed
+[INFO ] 23-05-2023 01:09:13 [main] Log - Sendkey value: "abc@gmail.com" into element: emailInput
+[INFO ] 23-05-2023 01:09:13 [main] Log - Sendkey value: "Matkhau" into element: passwordInput
+[INFO ] 23-05-2023 01:09:14 [main] Log - Click on: loginBtn
+[INFO ] 23-05-2023 01:09:14 [main] Log - [PASS] - Assert signOutBtn is Displayed
+[INFO ] 23-05-2023 01:09:17 [main] Log - Click on: homeIcon
+[INFO ] 23-05-2023 01:09:19 [main] Log - [PASS] - assert_HomePage_isdisplay
+[INFO ] 23-05-2023 01:09:21 [main] Log - Swipe Screen
+[INFO ] 23-05-2023 01:09:21 [main] Log - Get Index Random from List Element [[[io.appium.java_client.android.AndroidDriver, Capabilities: {appActivity=host.exp.exponent.MainActivity, appPackage=com.tuhuynh.sdetproecommerce, automationName=UiAutomator2, databaseEnabled=false, desired={platformName=android, appActivity=host.exp.exponent.MainActivity, appPackage=com.tuhuynh.sdetproecommerce, automationName=UiAutomator2, deviceName=emulator-5554, platformVersion=12}, deviceApiLevel=31, deviceManufacturer=Google, deviceModel=sdk_gphone64_x86_64, deviceName=emulator-5554, deviceScreenDensity=320, deviceScreenSize=768x1280, deviceUDID=emulator-5554, javascriptEnabled=true, locationContextEnabled=false, networkConnectionEnabled=true, pixelRatio=2, platform=LINUX, platformName=android, platformVersion=12, statBarHeight=48, takesScreenshot=true, viewportRect={left=0, top=48, width=768, height=1136}, warnings={}, webStorageEnabled=false}] -> xpath: (//android.view.ViewGroup[@content-desc="productItem"])], [[io.appium.java_client.android.AndroidDriver, Capabilities: {appActivity=host.exp.exponent.MainActivity, appPackage=com.tuhuynh.sdetproecommerce, automationName=UiAutomator2, databaseEnabled=false, desired={platformName=android, appActivity=host.exp.exponent.MainActivity, appPackage=com.tuhuynh.sdetproecommerce, automationName=UiAutomator2, deviceName=emulator-5554, platformVersion=12}, deviceApiLevel=31, deviceManufacturer=Google, deviceModel=sdk_gphone64_x86_64, deviceName=emulator-5554, deviceScreenDensity=320, deviceScreenSize=768x1280, deviceUDID=emulator-5554, javascriptEnabled=true, locationContextEnabled=false, networkConnectionEnabled=true, pixelRatio=2, platform=LINUX, platformName=android, platformVersion=12, statBarHeight=48, takesScreenshot=true, viewportRect={left=0, top=48, width=768, height=1136}, warnings={}, webStorageEnabled=false}] -> xpath: (//android.view.ViewGroup[@content-desc="productItem"])]]
+[INFO ] 23-05-2023 01:09:21 [main] Log - Click on: productItem
+[INFO ] 23-05-2023 01:09:21 [main] Log - [PASS] - Assert Title_Product_Detail is Displayed
+[INFO ] 23-05-2023 01:09:24 [main] Log - Swipe Screen
+[INFO ] 23-05-2023 01:09:24 [main] Log - [PASS] - Verify Same Product Name
+[INFO ] 23-05-2023 01:09:24 [main] Log - [PASS] - Verify Same Product Price
+[INFO ] 23-05-2023 01:09:25 [main] Log - Click on: addToCartBtn
+[INFO ] 23-05-2023 01:09:26 [main] Log - Click on: cartIcon
+[INFO ] 23-05-2023 01:09:28 [main] Log - Swipe Screen
+[INFO ] 23-05-2023 01:09:28 [main] Log - [PASS] - Verify Same Product Name
+[INFO ] 23-05-2023 01:09:28 [main] Log - [PASS] - Verify Same Product Price
+[INFO ] 23-05-2023 01:09:28 [main] Log - Click on: checkoutBtn
+[INFO ] 23-05-2023 01:09:28 [main] Log - [PASS] - Assert Checkout_Title is Displayed
+[INFO ] 23-05-2023 01:09:31 [main] Log - Sendkey value: "123" into element: phoneNum
+[INFO ] 23-05-2023 01:09:32 [main] Log - Sendkey value: "100 Khương Đình" into element: shippingAdd1
+[INFO ] 23-05-2023 01:09:33 [main] Log - Sendkey value: "187 Hạ Đình" into element: shippingAdd2
+[INFO ] 23-05-2023 01:09:35 [main] Log - Swipe Screen
+[INFO ] 23-05-2023 01:09:35 [main] Log - Sendkey value: "Hà Nội" into element: shippingCity
+[INFO ] 23-05-2023 01:09:36 [main] Log - Sendkey value: "100000" into element: shippingZIPCode
+[INFO ] 23-05-2023 01:09:37 [main] Log - Swipe Screen
+[INFO ] 23-05-2023 01:09:38 [main] Log - Click on: selectCountryTrigger
+[INFO ] 23-05-2023 01:09:43 [main] Log - Scroll to Text "Aruba"
+[INFO ] 23-05-2023 01:09:44 [main] Log - Click on: confirmShippingFormBtn
+[INFO ] 23-05-2023 01:09:44 [main] Log - [PASS] - Assert paymentTabHeader is Displayed
+[INFO ] 23-05-2023 01:09:45 [main] Log - Click on: Cash_on_Delivery
+[INFO ] 23-05-2023 01:09:47 [main] Log - Swipe Screen
+[INFO ] 23-05-2023 01:09:47 [main] Log - Click on: confirmBtn
+[INFO ] 23-05-2023 01:09:47 [main] Log - [PASS] - Assert confirmTabHeader is Displayed
+[INFO ] 23-05-2023 01:09:48 [main] Log - [PASS] - Verify confirm ShippingAdd1
+[INFO ] 23-05-2023 01:09:48 [main] Log - [PASS] - Verify confirm ShippingAdd2
+[INFO ] 23-05-2023 01:09:48 [main] Log - [PASS] - Verify confirm City
+[INFO ] 23-05-2023 01:09:48 [main] Log - [PASS] - Verify confirm Zipcode
+[INFO ] 23-05-2023 01:09:49 [main] Log - [PASS] - Verify confirm Country
+[INFO ] 23-05-2023 01:09:50 [main] Log - Swipe Screen
+[INFO ] 23-05-2023 01:09:50 [main] Log - [PASS] - Verify confirm ProductName
+[INFO ] 23-05-2023 01:09:50 [main] Log - [PASS] - Verify confirm ProductPrice
+[INFO ] 23-05-2023 01:09:50 [main] Log - Click on: placeOrderBtn
+[INFO ] 23-05-2023 01:09:50 [main] Log - [PASS] - Assert emptyCartSuggestionMsg is Displayed
+[INFO ] 23-05-2023 01:09:53 [main] Log - ==> The End!

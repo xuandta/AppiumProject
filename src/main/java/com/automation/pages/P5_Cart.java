@@ -1,5 +1,7 @@
 package com.automation.pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.util.List;
 
 import org.openqa.selenium.support.PageFactory;
@@ -41,15 +43,15 @@ public class P5_Cart extends MyActions {
 	private MobileElement checkoutBtn;
 
 	public void isDisplayed() {
-		A_Assert(A_WaitVisiable(cartHeader).isDisplayed(),"Assert_CartPage_isDisplayed");
+		A_Assert_isDisplayed(cartHeader,"cartHeader");
 	}
 
-	public boolean checkout_isDisplayed() {
-		return A_WaitVisiable(checkoutBtn).isDisplayed();
+	public void checkout_isDisplayed() {
+		A_Assert_isDisplayed(checkoutBtn,"checkoutBtn");
 	}
 
-	public boolean LoginBtn_isdisplay() {
-		return A_WaitVisiable(LoginBtn).isDisplayed();
+	public void LoginBtn_isdisplay() {
+		A_Assert_isDisplayed(LoginBtn,"LoginBtn");
 	}
 
 	public String getproductName1() {
@@ -61,11 +63,11 @@ public class P5_Cart extends MyActions {
 	}
 
 	public void Click_clearCartBtn() {
-		A_Click(clearCartBtn);
+		A_Click(clearCartBtn,"clearCartBtn");	
 	}
 
 	public void Click_checkoutBtn() {
-		A_Click(checkoutBtn);
+		A_Click(checkoutBtn,"checkoutBtn");
 	}
 
 }

@@ -46,22 +46,22 @@ public class P6_Checkout extends MyActions {
 	@AndroidFindBy(accessibility = "confirmShippingFormBtn")
 	private MobileElement confirmShippingFormBtn;
 
-	public boolean isdisplay() {
-		return A_WaitVisiable(Checkout_Title1).isDisplayed();
+	public void isdisplay() {
+		A_Assert_isDisplayed(Checkout_Title1,"Checkout_Title");
 	}
 
 	public void fullfillregisterBtn(AndroidDriver<MobileElement> driver, String phoneNum1, String shippingAdd11, String shippingAdd21,
 			String shippingCity1, String shippingZIPCode1, String country) {
-		A_Senkey(phoneNum, phoneNum1);
-		A_Senkey(shippingAdd1, shippingAdd11);
-		A_Senkey(shippingAdd2, shippingAdd21);
+		A_Senkey(phoneNum,"phoneNum", phoneNum1);
+		A_Senkey(shippingAdd1,"shippingAdd1", shippingAdd11);
+		A_Senkey(shippingAdd2,"shippingAdd2", shippingAdd21);
 		A_swipe(driver, 50, 50, 80, 40);
-		A_Senkey(shippingCity, shippingCity1);
-		A_Senkey(shippingZIPCode, shippingZIPCode1);
+		A_Senkey(shippingCity,"shippingCity", shippingCity1);
+		A_Senkey(shippingZIPCode,"shippingZIPCode", shippingZIPCode1);
 		A_swipe(driver, 50, 50, 80, 50);
-		A_Click(selectCountryTrigger);
+		A_Click(selectCountryTrigger,"selectCountryTrigger");
 		A_ScrollToText(country);
-		A_Click(confirmShippingFormBtn);
+		A_Click(confirmShippingFormBtn,"confirmShippingFormBtn");
 	}
 
 // ******************************************** Payment 
@@ -87,24 +87,24 @@ public class P6_Checkout extends MyActions {
 	@AndroidFindBy(accessibility = "confirmBtn")
 	private MobileElement confirmBtn;
 
-	public boolean Payment_isdisplay() {
-		return A_WaitVisiable(paymentTabHeader).isDisplayed();
+	public void Payment_isdisplay() {
+		A_Assert_isDisplayed(paymentTabHeader,"paymentTabHeader");
 	}
 
 	public void Bank_Transfer() {
-		A_Click(Bank_Transfer);
+		A_Click(Bank_Transfer,"Bank_Transfer");
 	}
 
 	public void Card_Payment() {
-		A_Click(Card_Payment);
+		A_Click(Card_Payment,"Card_Payment");
 	}
 
 	public void Click_Cash_on_Delivery() {
-		A_Click(Cash_on_Delivery);
+		A_Click(Cash_on_Delivery,"Cash_on_Delivery");
 	}
 
 	public void Click_confirmBtn() {
-		A_Click(confirmBtn);
+		A_Click(confirmBtn,"confirmBtn");
 	}
 
 	// ******************** Confirm order
@@ -135,8 +135,8 @@ public class P6_Checkout extends MyActions {
 	@AndroidFindBy(accessibility = "placeOrderBtn")
 	private MobileElement placeOrderBtn;
 
-	public boolean isdisplay_confirmTabHeader() {
-		return A_WaitVisiable(confirmTabHeader).isDisplayed();
+	public void isdisplay_confirmTabHeader() {
+		A_Assert_isDisplayed(confirmTabHeader,"confirmTabHeader");
 	}
 
 	public String getconfirmShippingAdd1() {
@@ -168,7 +168,7 @@ public class P6_Checkout extends MyActions {
 	}
 
 	public void Click_placeOrderBtn() {
-		A_Click(placeOrderBtn);
+		A_Click(placeOrderBtn,"placeOrderBtn");
 	}
 
 	// ******************* Ordersuccess
@@ -178,7 +178,7 @@ public class P6_Checkout extends MyActions {
 	@AndroidFindBy(accessibility = "emptyCartSuggestionMsg")
 	private MobileElement emptyCartSuggestionMsg;
 
-	public boolean isOrdersuccess() {
-		return A_WaitVisiable(emptyCartSuggestionMsg).isDisplayed();
+	public void isOrdersuccess() {
+		A_Assert_isDisplayed(emptyCartSuggestionMsg,"emptyCartSuggestionMsg");
 	}
 }

@@ -19,7 +19,7 @@ public class P0_Menu extends MyActions {
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
-	@AndroidFindBy(accessibility = "homeIcon")
+	@AndroidFindBy(accessibility = "homeIcon") 
 	public MobileElement homeIcon;
 
 	@AndroidFindBy(accessibility = "cartIcon")

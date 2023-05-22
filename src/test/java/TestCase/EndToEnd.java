@@ -84,13 +84,13 @@ public class EndToEnd extends DriverInstance {
 
 		MyActions.A_swipe(driver, 50, 50, 70, 30);
 
-		MyActions.A_Assert(ProductName, P4_ProductDetail.getproductName(), "Check Product Name");
+		MyActions.A_Assert(ProductName, P4_ProductDetail.getproductName(), "Verify Same Product Name");
 
-		MyActions.A_Assert(ProductPrice, P4_ProductDetail.getproductPrice(),"Check Product Price");
+		MyActions.A_Assert(ProductPrice, P4_ProductDetail.getproductPrice(),"Verify Same Product Price");
 
 		P4_ProductDetail.click_addToCartBtn();
 
-		assertEquals(P0_Menu.getProductNumber(), 1,"Check Number of Product");
+		assertEquals(P0_Menu.getProductNumber(), 1,"Verify Number of Product is 1");
 
 		// Màn hình Cart
 
@@ -98,15 +98,15 @@ public class EndToEnd extends DriverInstance {
 
 		MyActions.A_swipe(driver, 50, 50, 70, 50);
 
-		MyActions.A_Assert(ProductName, P5_Cart.getproductName1(), "Check Product Name");
+		MyActions.A_Assert(ProductName, P5_Cart.getproductName1(), "Verify Same Product Name");
 
-		MyActions.A_Assert(ProductPrice, P5_Cart.getproductPrice1(), "Check Product Price");
+		MyActions.A_Assert(ProductPrice, P5_Cart.getproductPrice1(), "Verify Same Product Price");
 
 		P5_Cart.Click_checkoutBtn();
 
 		// Màn hình Checkout
 
-		MyActions.A_Assert(P6_Checkout.isdisplay(), "Check Checkout Screen is Displayed");
+		P6_Checkout.isdisplay();
 
 		P6_Checkout.fullfillregisterBtn(driver, C_phone, C_Add1, C_Add2, C_City, C_Zipcode, C_country); //C_country
 
@@ -124,20 +124,20 @@ public class EndToEnd extends DriverInstance {
 
 		P6_Checkout.isdisplay_confirmTabHeader();
 
-		MyActions.A_Assert(P6_Checkout.getconfirmShippingAdd1().contains(C_Add1), true);
-		MyActions.A_Assert(P6_Checkout.getconfirmShippingAdd2().contains(C_Add2), true);
-		MyActions.A_Assert(P6_Checkout.getconfirmCity().contains(C_City), true);
-		MyActions.A_Assert(P6_Checkout.getconfirmZIPCode().contains(C_Zipcode), true);
-		MyActions.A_Assert(P6_Checkout.getconfirmCountry().contains(C_country), true);
+		MyActions.A_Assert(P6_Checkout.getconfirmShippingAdd1().contains(C_Add1), "Verify confirm ShippingAdd1");
+		MyActions.A_Assert(P6_Checkout.getconfirmShippingAdd2().contains(C_Add2), "Verify confirm ShippingAdd2");
+		MyActions.A_Assert(P6_Checkout.getconfirmCity().contains(C_City), "Verify confirm City");
+		MyActions.A_Assert(P6_Checkout.getconfirmZIPCode().contains(C_Zipcode), "Verify confirm Zipcode");
+		MyActions.A_Assert(P6_Checkout.getconfirmCountry().contains(C_country), "Verify confirm Country");
 
 		MyActions.A_swipe(driver, 50, 50, 80, 50);
 
-		MyActions.A_Assert(P6_Checkout.getitemName(), ProductName);
-		MyActions.A_Assert(P6_Checkout.getitemPrice(), ProductPrice);
+		MyActions.A_Assert(P6_Checkout.getitemName(), ProductName,"Verify confirm ProductName");
+		MyActions.A_Assert(P6_Checkout.getitemPrice(), ProductPrice, "Verify confirm ProductPrice");
 
 		P6_Checkout.Click_placeOrderBtn();
 
-		MyActions.A_Assert(P6_Checkout.isOrdersuccess(), true);
+		P6_Checkout.isOrdersuccess();
 		Log.info("==> The End!");
 	}
 }

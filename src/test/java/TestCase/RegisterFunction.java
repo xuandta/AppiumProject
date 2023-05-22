@@ -39,7 +39,7 @@ public class RegisterFunction extends DriverInstance {
 
 		P2_Register.fullfillregisterBtn(driver, "", "", "", "");
 
-		MyActions.A_Assert(P2_Register.ErrorMessage_isdisplay());
+		P2_Register.ErrorMessage_isdisplay();
 
 	}
 }

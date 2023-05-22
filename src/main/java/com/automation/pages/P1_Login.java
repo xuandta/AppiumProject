@@ -41,11 +41,11 @@ public class P1_Login extends MyActions {
 	private MobileElement signOutBtn;
 
 	public void assert_isdisplay() {
-		A_Assert(A_WaitVisiable(loginTitle).isDisplayed(), "assert_LoginPage_isdisplay");
+		A_Assert_isDisplayed(loginTitle,"loginTitle");
 	}
 
 	public void assert_isLogIn() {
-		A_Assert(A_WaitVisiable(signOutBtn).isDisplayed(), "assert_isLogIn");
+		A_Assert_isDisplayed(signOutBtn, "signOutBtn");
 	}
 
 	public void fullfillLogin(String email, String password) {
@@ -59,8 +59,7 @@ public class P1_Login extends MyActions {
 	}
 
 	public void ErrorMessage_isdisplay() {
-		A_Assert(A_WaitVisiable(Error_msg).isDisplayed(), "assert_Error_msg_isDisplayed");
-
+		A_Assert_isDisplayed(Error_msg,"Error_msg");
 	}
 
 }

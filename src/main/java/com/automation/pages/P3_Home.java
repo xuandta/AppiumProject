@@ -92,23 +92,23 @@ public class P3_Home extends MyActions {
 	}
 
 	public void click_productName(int index) {
-		A_Click(productName.get(index));
+		A_Click(productName.get(index),"productName");
 	}
 
 	public void click_product(int index) {
-		A_Click(productItem.get(index));
+		A_Click(productItem.get(index),"productItem");
 	}
 
 	public void click_addToCartBtn(int index) {
-		A_Click(addToCartBtn.get(index));
+		A_Click(addToCartBtn.get(index),"addToCartBtn");
 	}
 
 	public void click_searchInput() {
-		searchInput.click();
+		A_Click(searchInput,"searchInput");
 	}
 
 	public void click_closeSearchIcon() {
-		closeSearchIcon.click();
+		A_Click(closeSearchIcon,"closeSearchIcon");
 	}
 
 	public void click_search_productName_random() {
